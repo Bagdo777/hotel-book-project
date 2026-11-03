@@ -1,0 +1,535 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg:#faf5ee;
+  --side:#f6eee3;
+  --card:#fffdf9;
+  --line:#eadfce;
+  --ink:#2a1d17;
+  --muted:#7a6a5f;
+  --shadow:rgba(120,70,30,.14);
+}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'DM Sans',system-ui,sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-wrap:wrap
+}
+
+main{
+  flex:1;
+  min-width:0;
+  background:radial-gradient(ellipse at 50% 35%, #fffaf4 0%, #faf5ee 55%, #f7efe5 100%);
+}
+
+.logo{
+  width:100px;
+  height:auto;
+  display:block;
+}
+
+.brand{
+  padding:0 8px 20px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:20px;
+}
+
+nav{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+nav a{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 10px;
+  border-radius:8px;
+  font-size:12px;
+  color:var(--ink);
+  text-decoration:none;
+  width:100%;
+}
+nav a img{
+  width:14px;
+  height:14px;
+  opacity:.8;
+}
+nav a.on{
+  background:var(--card);
+  box-shadow:0 1px 3px var(--shadow);
+}
+nav a i{
+  margin-left:auto;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#c4421d;
+  color:#fff;
+  font:600 8px/12px 'DM Sans';
+  text-align:center;
+}
+
+
+.weather{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+  padding:12px 12px 14px;
+  border-radius:12px;
+  color:#4a3410;
+  background:#f5d57f;
+  box-shadow:0 4px 12px rgba(200,140,30,.25);
+}
+
+.weather-sun{
+  position:absolute;
+  top:-26px;
+  right:-26px;
+  width:88px;
+  height:88px;
+  max-width:none;
+  pointer-events:none;
+}
+
+.weather-label,
+.weather-temp,
+.weather-desc{
+  position:relative;
+  z-index:1;
+}
+
+.weather-label{
+  font:500 7px 'DM Mono',monospace;
+  letter-spacing:.1em;
+}
+
+.weather-temp{
+  font-family:'Fraunces',serif;
+  font-size:26px;
+  line-height:1;
+  margin:10px 0 4px;
+}
+
+.weather-desc{
+  font-size:8.5px;
+}
+
+aside{
+  width:260px;
+  flex:none;
+  background:var(--side);
+  border-right:1px solid var(--line);
+  padding:28px 18px;
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  position:sticky;
+  top:0;
+}
+
+.foot{
+  margin-top:22px;
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  line-height:1.7;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.foot p{
+  margin-bottom:14px;
+}
+
+.foot p:last-child{
+  margin-bottom:0;
+}
+
+/*მარჯვენა მხარე*/
+
+main{
+  flex:1;
+  min-width:0;
+  padding:34px 48px 48px;
+  background:radial-gradient(ellipse at 50% 35%, #fffaf4 0%, #faf5ee 55%, #f7efe5 100%);
+}
+
+/*  სათაური  */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.eyebrow{
+  font:500 11px 'DM Mono',monospace;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+h1{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:44px;
+  line-height:1.1;
+  margin-top:10px;
+}
+
+h1 em{
+  color:#b8431c;
+  font-style:italic;
+}
+
+/* ღილაკები */
+.btns{
+  display:flex;
+  gap:12px;
+  margin-top:8px;
+}
+
+.btn{
+  font:500 13px 'DM Sans',sans-serif;
+  padding:12px 22px;
+  border-radius:90px;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--ink);
+  cursor:pointer;
+}
+
+.btn.dark{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px var(--shadow);
+}
+
+/* ბარათები */
+.stage{
+  position:relative;
+  width:720px;
+  max-width:100%;
+  height:460px;
+  margin:40px auto 0;
+}
+
+/* ჩეკი */
+.receipt{
+  position:absolute;
+  left:0;
+  top:36px;
+  width:370px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:24px 26px 20px;
+  box-shadow:0 16px 40px var(--shadow);
+  transform:rotate(-4deg);
+}
+
+.r-top{
+  display:flex;
+  justify-content:space-between;
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+}
+
+.r-no{ text-align:right; }
+
+.receipt h3{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:22px;
+  margin:6px 0 18px;
+}
+
+.dates{
+  display:flex;
+  justify-content:center;
+  gap:46px;
+  text-align:center;
+}
+
+.dates small{
+  display:block;
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+}
+
+.dates b{
+  display:block;
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:36px;
+  margin:4px 0;
+}
+
+.dates span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.rows{
+  margin-top:22px;
+  display:grid;
+  gap:10px;
+  font-size:13px;
+  transform:rotate(-1deg);
+}
+
+.rows div{
+  display:flex;
+  justify-content:space-between;
+}
+
+.rows em{
+  font:400 12px 'DM Mono',monospace;
+  font-style:normal;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:1px solid var(--ink);
+  margin-top:16px;
+  padding-top:14px;
+}
+
+.total small{
+  font:400 11px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+}
+
+.total b{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:32px;
+}
+
+.paid{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-top:10px;
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+}
+
+.barcode{
+  width:120px;
+  height:30px;
+  max-width:none;
+}
+
+/* ნარინჯისფერი ბარათი */
+.welcome{
+  position:absolute;
+  right:0;
+  top:0;
+  width:370px;
+  height:410px;
+  border-radius:22px;
+  padding:24px 28px;
+  color:#fff;
+  background:linear-gradient(160deg,#c9552b,#a5390f);
+  box-shadow:0 30px 60px rgba(170,60,20,.35);
+  transform:rotate(4deg);
+  overflow:hidden;
+}
+
+.w-sun{
+  position:absolute;
+  top:26px;
+  right:26px;
+  width:36px;
+  height:36px;
+  max-width:none;
+}
+
+.w-lbl{
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  opacity:.75;
+  border-top:1px dashed rgba(255,255,255,.35);
+  padding-top:10px;
+}
+
+.w-note{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:19px;
+  color:#f6c36a;
+  margin-top:64px;
+}
+
+.welcome h2{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:46px;
+  margin:4px 0 22px;
+}
+
+.welcome p{
+  font-size:15px;
+  line-height:1.55;
+  opacity:.95;
+}
+
+.w-room{
+  position:absolute;
+  left:28px;
+  bottom:24px;
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.w-room b{
+  display:block;
+  font:400 18px 'Fraunces',serif;
+  text-transform:none;
+  letter-spacing:0;
+  margin-top:6px;
+}
+
+.hint{
+  text-align:center;
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#b8431c;
+  margin:16px 0 36px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.info{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px 22px 26px;
+  box-shadow:0 6px 20px var(--shadow);
+  transition:transform .25s, box-shadow .25s;
+}
+.info:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px var(--shadow);
+}
+
+.hd{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.ic{
+  width:36px;
+  height:36px;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  flex:none;
+  background:var(--c);
+}
+
+.ic img{
+  width:20px;
+  height:20px;
+  max-width:none;
+  display:block;
+}
+.hd .t{
+  font:500 12px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.hd .n{
+  margin-left:auto;
+  font:400 22px 'Fraunces',serif;
+}
+
+.info h4{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:26px;
+  margin:26px 0 6px;
+}
+.info .sub{
+  font-size:12px;
+  color:var(--muted);
+}
+.info p{
+  font-size:14px;
+  line-height:1.6;
+  margin-top:16px;
+}
+
+.pw{margin-top:16px}
+.field{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#f1ebe0;
+  border-radius:8px;
+  padding:10px 14px;
+  font-size:12px;
+  margin-top:6px;
+}
+.field span{
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+.field b{font-weight:500}
+.field u{
+  text-decoration:none;
+  font:400 10px 'DM Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+  margin-left:12px;
+  padding-left:12px;
+  border-left:1px solid var(--line);
+  cursor:pointer;
+}
+.field u:hover{color:#b8431c}
+
+.info.arrival{ --c:#bf4219; }
+.info.wifi{ --c:#4e62c8; }
+.info.breakfast{ --c:#c93a64; }
+    
+
+
